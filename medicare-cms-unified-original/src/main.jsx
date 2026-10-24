@@ -1,0 +1,1 @@
+import React from 'react';import{createRoot}from'react-dom/client';import App from './App';import './shell.css';import './auth/auth.css';import './tenant-admin/tenant-admin.css';import './patients/patients.css';import './appointments/appointments.css';createRoot(document.getElementById('root')).render(<React.StrictMode><App/></React.StrictMode>);

@@ -1,0 +1,1 @@
+import React from'react';import PatientForm from'./PatientForm';export default function EditPatient(props){return <><header className="heading"><div><h1>Edit Patient Details</h1><p>Update information for {props.patient.name}.</p></div></header><PatientForm key={props.patient.id} patient={props.patient} onSave={props.onSave} onCancel={props.onCancel}/></>}

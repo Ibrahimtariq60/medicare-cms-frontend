@@ -1,0 +1,7 @@
+import React,{useState} from 'react';
+export function Logo({light=false}){return <div className={'logo '+(light?'logo-light':'')}><span className="logo-mark" aria-hidden="true">+</span><span>MediCare CMS</span></div>}
+export function Button({children,loading=false,secondary=false,...props}){return <button className={'button '+(secondary?'button-secondary':'')} disabled={loading||props.disabled} {...props}>{loading?<><span className="spinner" aria-hidden="true"/> Please wait…</>:children}</button>}
+export function Card({children}){return <section className="card">{children}</section>}
+export function Input({label,id,error='',password=false,...props}){const [visible,setVisible]=useState(false);return <div className="field"><label htmlFor={id}>{label}</label><div className="input-wrap"><input id={id} type={password?(visible?'text':'password'):(props.type||'text')} aria-invalid={!!error} aria-describedby={error?id+'-error':undefined} {...props}/>{password&&<button type="button" className="show-toggle" onClick={()=>setVisible(!visible)} aria-label={visible?'Hide password':'Show password'}>{visible?'Hide':'Show'}</button>}</div>{error&&<p className="field-error" id={id+'-error'} role="alert">{error}</p>}</div>}
+export function Shell({children}){return <div className="page-center"><Card><Logo/>{children}<p className="prototype-note">Visual prototype only</p></Card></div>}
+export const emailValid=(v)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);

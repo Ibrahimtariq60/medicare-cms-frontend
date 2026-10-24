@@ -1,0 +1,2 @@
+import React from'react';import{Shell,Button}from'../components/UI';
+export default function AccessDenied({go}){return <Shell><p className="eyebrow">Access restricted</p><h1>Access denied</h1><p className="intro">You don't have permission to view this page. Contact your clinic administrator if you need access.</p><Button onClick={()=>go('login')}>Back to sign in</Button><button className="text-link block-link" onClick={()=>go('clinic')}>Change clinic</button></Shell>}

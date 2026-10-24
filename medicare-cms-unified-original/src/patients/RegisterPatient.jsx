@@ -1,0 +1,1 @@
+import React from'react';import PatientForm from'./PatientForm';export default function RegisterPatient(props){return <><header className="heading"><div><h1>Register Patient</h1><p>Enter the patient's basic information.</p></div></header><PatientForm onSave={props.onSave} onCancel={props.onCancel}/></>}
